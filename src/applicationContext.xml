@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- 通过引入方式分类配置文件，增强代码可读性。 -->
+<!-- 引入文件：数据库连接配置、spring事务及aop配置、操作数据库的Dao的实现类的spring-bean -->
+<import resource="configxml/dbconnection.xml"/>
+<import resource="configxml/spring.xml"/>
+<import resource="configxml/bean.xml"/>
+</beans>
