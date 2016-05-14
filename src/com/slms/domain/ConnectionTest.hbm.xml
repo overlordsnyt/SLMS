@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.slms.domain">
+	<!-- 连通测试实体类的hibernate数据库关系映射 -->
+	<class name="ConnectionTest" table="connection_test">
+		<id name="id">
+			<generator class="identity"></generator>
+		</id>
+		<property name="username" length="20"></property>
+		<property name="password" length="20"></property>
+	</class>
+</hibernate-mapping>
