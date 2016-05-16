@@ -77,6 +77,9 @@ struts.xml	Struts配置文件
 1. ConnectionTesting.java	连通性后台操作测试
 
 ## 开发日志
+2016-05-16
+数据字典的详细设计
+项目启动初始化完成
 
 2016-05-14
 完成 前端→Struts的Action→Spring的实现Dao接口的Bean后台数据库操作类实例→数据库更新条目成功 的连通性测试
