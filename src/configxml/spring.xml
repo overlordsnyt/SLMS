@@ -16,7 +16,9 @@
 	</bean>
 	<!-- 切面配置 -->
 	<aop:config>
-		<aop:pointcut expression="execution(* com.slms.dao.*.*(..))" id="accessDatabaseProcess"/>
+		<!-- <aop:pointcut expression="execution(* com.slms.dao.*.*(..))" id="accessDatabaseProcess"/> -->
+		<!-- 任何实现了com.slms.dao包下的接口的类型的任何方法 -->
+		<aop:pointcut expression="execution(* com.slms.dao.*+.*(..))" id="accessDatabaseProcess"/>
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="accessDatabaseProcess"/>
 	</aop:config>
 	<!-- 事务属性 -->

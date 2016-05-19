@@ -27,7 +27,7 @@ public class ConnectionTestAction extends ActionSupport {
 	 */
 	public String saveSubmit(){
 		@SuppressWarnings("rawtypes")
-		DaoTest handle=AppContextUtil.getHandleBean("connectiontest");
+		DaoTest handle=AppContextUtil.getTestHandleBean("connectiontest");
 		@SuppressWarnings("unchecked")
 		int result=handle.savetest(test);
 		if(result==-1)return "error";

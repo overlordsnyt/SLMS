@@ -19,8 +19,11 @@
 		<property name="mappingResources">
 			<list>
 				<value>com/slms/domain/ConnectionTest.hbm.xml</value>
-				<!-- <value></value>
-				<value></value> -->
+				<value>com/slms/domain/Staff.hbm.xml</value>
+				<value>com/slms/domain/Goods.hbm.xml</value>
+				<value>com/slms/domain/Client.hbm.xml</value>
+				<value>com/slms/domain/StockIn.hbm.xml</value>
+				<value>com/slms/domain/StockOut.hbm.xml</value>
 			</list>
 		</property>
 		<!-- hibernate配置文件 -->

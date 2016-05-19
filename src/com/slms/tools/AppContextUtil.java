@@ -3,6 +3,7 @@ package com.slms.tools;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.slms.dao.DBHandleDao;
 import com.slms.dao.DaoTest;
 import com.slms.domain.ConnectionTest;
 
@@ -12,12 +13,25 @@ import com.slms.domain.ConnectionTest;
  *
  */
 public class AppContextUtil {
+	
 	/**
 	 * 一键创建ApplicationContext
+	 * @param beanName
+	 * @return	创建完成的对应类型的后台数据库服务操作实例
+	 */
+	@SuppressWarnings({ "resource", "unchecked" })
+	public static <E> DBHandleDao<E> getServiceBean(String beanName){
+		ApplicationContext context=new ClassPathXmlApplicationContext("applicationContext.xml");
+		DBHandleDao<E> service=(DBHandleDao<E>) context.getBean(beanName);
+		return service;
+	}
+	
+	/**
+	 * 一键创建ApplicationContext（测试版）
 	 * @param beanName 在bean.xml中配置好的数据库操作实例bean的名称
 	 * @return		创建完成的对应类型的数据库操作实例
 	 */
-	public static <E> DaoTest<E> getHandleBean(String beanName){
+	public static <E> DaoTest<E> getTestHandleBean(String beanName){
 		@SuppressWarnings("resource")
 		ApplicationContext context=new ClassPathXmlApplicationContext("applicationContext.xml");
 		@SuppressWarnings("unchecked")
@@ -31,7 +45,7 @@ public class AppContextUtil {
 	 * @param args
 	 */
 	public static void main(String args[]){
-		DaoTest<ConnectionTest> tt=getHandleBean("connectiontest");
+		DaoTest<ConnectionTest> tt=getTestHandleBean("connectiontest");
 		System.out.println(tt.getClass());
 		ConnectionTest vo=new ConnectionTest();
 		vo.setUsername("555");

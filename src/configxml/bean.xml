@@ -6,8 +6,28 @@
 
 <!-- 数据库操作的实现类的spring-bean封装 -->
 
+	<!-- 测试用接口实现类的实例 -->
 	<bean id="connectiontest" class="com.slms.dao.ConnectionTestImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
+	
+	<!-- 后台数据库操作服务实现类的实例 -->
+	<bean id="staffService" class="com.slms.service.StaffService">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="goodsService" class="com.slms.service.GoodsService">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="clientService" class="com.slms.service.ClientService">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="stockinService" class="com.slms.service.StockInService">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="stockoutService" class="com.slms.service.StockOutService">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<!-- Action控制器 -->
 	
 </beans>
