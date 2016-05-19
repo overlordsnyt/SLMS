@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.slms.domain">
+	<class name="StockIn" table="stockin">
+		<meta attribute="class-decription">
+			进货单关系映射
+		</meta>
+		<id name="id">
+			<generator class="identity"></generator>
+		</id>
+		<property name="name" length="50"></property>
+		<many-to-one name="client" column="client_id" class="Client"></many-to-one>
+		<many-to-one name="goods" column="goods_id" class="Goods"></many-to-one>
+		<many-to-one name="staff" column="staff_id" class="Staff"></many-to-one>
+		<property name="amount"></property>
+		<!-- percision属性设置BigDecimal类型的精度，scale属性设置BigDecimal类型的小数位位数 -->
+		<property name="price" precision="11" scale="2"></property>
+		<property name="money" precision="11" scale="2"></property>
+		<property name="createdate"></property>
+	</class>
+</hibernate-mapping>

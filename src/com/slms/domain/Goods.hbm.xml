@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.slms.domain">
+	<class name="Goods" table="goods">
+		<meta attribute="class-decription">
+			商品档案关系映射
+		</meta>
+		<id name="id">
+			<generator class="identity"></generator>
+		</id>
+		<property name="name" length="50" not-null="true"></property>
+		<!-- percision属性设置BigDecimal类型的精度，scale属性设置BigDecimal类型的小数位位数 -->
+		<property name="price" precision="11" scale="2"></property>
+	</class>
+</hibernate-mapping>

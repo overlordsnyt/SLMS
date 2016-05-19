@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.slms.domain">
+	<class name="StockOut" table="stockout">
+		<meta attribute="class-decription">
+			订货单关系映射
+		</meta>
+		<id name="id">
+			<generator class="identity"></generator>
+		</id>
+		<property name="name" length="50"></property>
+		<many-to-one name="client" column="client_id" class="Client"></many-to-one>
+		<many-to-one name="goods" column="goods_id" class="Goods"></many-to-one>
+		<many-to-one name="staff" column="staff_id" class="Staff"></many-to-one>
+		<property name="amount"></property>
+		<property name="createdate"></property>
+	</class>
+</hibernate-mapping>

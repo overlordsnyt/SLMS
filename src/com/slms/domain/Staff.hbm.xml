@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.slms.domain">
+	<class name="Staff" table="staff">
+		<meta attribute="class-decription">
+			员工档案关系映射
+		</meta>
+		<id name="id">
+			<generator class="identity"></generator>
+		</id>
+		<property name="name" length="50" not-null="true"></property>
+		<property name="birth"></property>
+		<property name="sex"></property>
+		<property name="phone" length="20"></property>
+		<property name="email" length="50"></property>
+	</class>
+</hibernate-mapping>
